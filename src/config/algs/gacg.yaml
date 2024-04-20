@@ -1,4 +1,4 @@
-# --- DICG specific parameters ---
+# --- GACG specific parameters ---
 name: "GACG"
 is_masssge: True
 is_sparse: True
