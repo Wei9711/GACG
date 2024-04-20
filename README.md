@@ -1,7 +1,13 @@
 # GACG: Group-Aware Coordination Graph for Multi-Agent Reinforcement Learning
 
 This codebase is based on [PyMARL](https://github.com/oxwhirl/pymarl) and contains the implementation
-of the GACG algorithm.
+of the [GACG](https://arxiv.org/abs/2404.10976) algorithm.
+
+<figure>
+  <img src="https://github.com/Wei9711/GACG/raw/main/GroupAwareCG.svg" alt="GACG Framework SVG">
+  <figcaption> The framework of our method. GACG is designed to calculate cooperation needs between agent pairs based on current observations and to capture group-level dependencies from behaviour patterns observed across trajectories. All edges in the coordination graph as a Gaussian distribution. This graph helps agents exchange knowledge when making decisions.  During agent training, the group distance loss regularizes behaviour among agents with similar observation trajectories.
+</figcaption>
+</figure>
 
 ## Run an experiment 
 
@@ -14,16 +20,28 @@ python src/main.py --config=gacg--env-config=sc2 with env_args.map_name='10m_vs_
 
 The requirements.txt file can be used to install the necessary packages into a virtual environment.
 
-## Saving and loading learnt models
+## Baselines used in this paper
+- [**QMIX**: QMIX: Monotonic Value Function Factorisation for Deep Multi-Agent Reinforcement Learning](https://arxiv.org/abs/1803.11485)
+- [**DCG**: Deep Coordination Graphs](https://arxiv.org/abs/1910.00091)
+- [**DICG**: Deep Implicit Coordination Graphs for Multi-agent Reinforcement Learning](https://arxiv.org/abs/2006.11438) 
+- [**CASEC**: Context-Aware Sparse Deep Coordination Graphs](https://arxiv.org/abs/2106.02886)
+- [**VAST**: VAST: Value Function Factorization with Variable Agent Sub-Teams](https://proceedings.neurips.cc/paper_files/paper/2021/hash/c97e7a5153badb6576d8939469f58336-Abstract.html)
 
-### Saving models
 
-You can save the learnt models to disk by setting `save_model = True`, which is set to `False` by default. The frequency of saving models can be adjusted using `save_model_interval` configuration. Models will be saved in the result directory, under the folder named *models*. The directory corresponding to each run will contain models saved throughout the training process, each of which is named by the number of timesteps passed since the learning process starts.
+## Citing GACG 
 
-### Loading models
+If you use GACG  in your research, please cite the [GACG](https://arxiv.org/abs/2404.10976).
 
-Learnt models can be loaded using the `checkpoint_path` parameter, after which the learning will proceed from the corresponding timestep. 
+*Wei Duan, Jie Lu, Junyu Xuan. Group-Aware Coordination Graph for Multi-Agent Reinforcement Learning. CoRR abs/2404.10976 (2024)*
 
-## Watching StarCraft II replays
+In BibTeX format:
 
-`save_replay` option allows saving replays of models which are loaded using `checkpoint_path`. Once the model is successfully loaded, `test_nepisode` number of episodes are run on the test mode and a .SC2Replay file is saved in the Replay directory of StarCraft II. Please make sure to use the episode runner if you wish to save a replay, i.e., `runner=episode`. The name of the saved replay file starts with the given `env_args.save_replay_prefix` (map_name if empty), followed by the current timestamp. 
+```tex
+@misc{duan2024groupaware,
+      title={Group-Aware Coordination Graph for Multi-Agent Reinforcement Learning}, 
+      author={Wei Duan and Jie Lu and Junyu Xuan},
+      year={2024},
+      eprint={2404.10976},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG}
+}
