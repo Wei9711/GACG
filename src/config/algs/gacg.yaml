@@ -1,0 +1,52 @@
+# --- DICG specific parameters ---
+name: "GACG"
+is_masssge: True
+is_sparse: True
+adj_threshold: 0.5
+
+group_num: 2
+obs_group_trunk_size: 10
+is_train_groupnizer: True
+group_loss_weight: 0.01
+# train_groupnizer: False
+# dense_bewteen_group: True
+# use epsilon greedy action selector
+action_selector: "epsilon_greedy"
+epsilon_start: 1.0
+epsilon_finish: 0.05
+epsilon_anneal_time: 50000
+
+runner: "episode"
+
+buffer_size: 5000
+
+# update the target network every {} episodes
+target_update_interval: 200
+
+# DICG graph
+train_graph: False
+dicg_emb_hid: 128
+
+gcn_message_dim: 0.3  # 0.3 * obs_dim
+
+concate_mlp_dim: 10
+number_gcn_layers: 2
+
+concate_gcn: True
+concate_mlp: False
+
+
+
+# use the Q_Learner to train / QMIX as baseline
+agent_output_type: "q"
+learner: "gacg_learner"
+mac: "gacg_mac"    
+double_q: True
+mixer: "qmix"
+mixing_embed_dim: 32
+hypernet_layers: 2
+hypernet_embed: 64
+
+# --- Logging options ---
+# save_model: True # Save the models to disk
+save_model_interval: 2000000 # Save models after this many timesteps
