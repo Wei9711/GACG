@@ -23,7 +23,7 @@ buffer_size: 5000
 # update the target network every {} episodes
 target_update_interval: 200
 
-# DICG graph
+#Graph
 train_graph: False
 dicg_emb_hid: 128
 
