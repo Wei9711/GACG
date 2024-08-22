@@ -1,5 +1,6 @@
 # --- DICG specific parameters ---
 name: "dicg"
+is_masssge: True
 
 # use epsilon greedy action selector
 action_selector: "epsilon_greedy"
