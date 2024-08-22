@@ -1,5 +1,8 @@
 # GACG: Group-Aware Coordination Graph for Multi-Agent Reinforcement Learning
 
+This work [Group-Aware Coordination Graph for Multi-Agent Reinforcement Learning]([https://ieeexplore.ieee.org/document/9755440](https://www.ijcai.org/proceedings/2024/434)) appeared at the 33rd International Joint
+Conference on Artificial Intelligence (IJCAI 2024)
+
 This codebase is based on [PyMARL](https://github.com/oxwhirl/pymarl) and contains the implementation
 of the [GACG](https://arxiv.org/abs/2404.10976) algorithm.
 
