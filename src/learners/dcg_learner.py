@@ -17,10 +17,11 @@ class DCGLearner(QLearner):
             self.action_encoder_optimiser = RMSprop(params=self.action_encoder_params, lr=args.lr, alpha=args.optim_alpha, eps=args.optim_eps)
             self.action_repr_updating = True
 
-    def train(self, batch: EpisodeBatch, t_env: int, episode_num: int):
+    def train(self, episode_sample: EpisodeBatch, max_ep_t, t_env: int, episode_num: int):
         """ Overrides the train method from QLearner. """
 
         # Get the relevant quantities
+        batch = episode_sample[:, :max_ep_t]
         rewards = batch["reward"][:, :-1]
         actions = batch["actions"][:, :-1]
         terminated = batch["terminated"][:, :-1].float()
