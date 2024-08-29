@@ -40,11 +40,17 @@ If you use GACG  in your research, please cite the [GACG](https://arxiv.org/abs/
 In BibTeX format:
 
 ```tex
-@misc{duan2024groupaware,
-      title={Group-Aware Coordination Graph for Multi-Agent Reinforcement Learning}, 
-      author={Wei Duan and Jie Lu and Junyu Xuan},
-      year={2024},
-      eprint={2404.10976},
-      archivePrefix={arXiv},
-      primaryClass={cs.LG}
+@inproceedings{ijcai2024p434,
+  title     = {Group-Aware Coordination Graph for Multi-Agent Reinforcement Learning},
+  author    = {Duan, Wei and Lu, Jie and Xuan, Junyu},
+  booktitle = {Proceedings of the Thirty-Third International Joint Conference on
+               Artificial Intelligence, {IJCAI-24}},
+  publisher = {International Joint Conferences on Artificial Intelligence Organization},
+  editor    = {Kate Larson},
+  pages     = {3926--3934},
+  year      = {2024},
+  month     = {8},
+  note      = {Main Track},
+  doi       = {10.24963/ijcai.2024/434},
+  url       = {https://doi.org/10.24963/ijcai.2024/434},
 }
