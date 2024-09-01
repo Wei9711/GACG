@@ -18,7 +18,7 @@ Tasks can be found in `src/envs`.
 
 To run experiments on SMAC benchmark:
 ```shell
-python src/main.py --config=gacg--env-config=sc2 with env_args.map_name='10m_vs_11m' 
+python src/main.py --config=gacg --env-config=sc2 with env_args.map_name='10m_vs_11m' 
 ```
 
 The requirements.txt file can be used to install the necessary packages into a virtual environment.
